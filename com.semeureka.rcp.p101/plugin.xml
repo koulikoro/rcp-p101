@@ -31,5 +31,38 @@
          </property>
       </product>
    </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.semeureka.rcp.p101.ProxyView"
+            id="com.semeureka.rcp.p101.ProxyView"
+            name="Proxy View"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="com.semeureka.rcp.p101.ProxyView"
+               minimized="false"
+               ratio="0.25"
+               relationship="left"
+               relative="org.eclipse.ui.editorss">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:com.semeureka.rcp.p101.ProxyView">
+         <command
+               commandId="org.eclipse.ui.file.exit"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
 
 </plugin>
